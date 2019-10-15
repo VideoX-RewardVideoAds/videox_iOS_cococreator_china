@@ -23,11 +23,19 @@
 
 ![copy_items](https://github.com/VideoX-RewardVideoAds/videoxdemo_iOS/blob/master/images/copy_items.png)
 
-2. 在Xcode工程 ***App target*** -> ***General*** -> ***Embedded Binaries*** 处 添加 `VideoXSDK.framework`
+2、Xcode 版本小于11， 在 ***target*** -> ***General*** -> ***Embedded Binaries*** 栏目中添加 `VideoXSDK.framework` 文件。
 
 ![embedded binarise](https://github.com/VideoX-RewardVideoAds/videoxdemo_iOS/blob/master/images/embedded_binarise.jpg)
 
-3. 在VXJSToNative.mm文件里 填写配置信息
+ Xcode 11，在***target*** -> ***General*** -> ***Frameworks,Libraries,and Embedded Content*** 栏添加`VideoXSDK.framework`，并选择Embed为 `Embed & Sign`
+
+3、你需要在工程的Info.plist 添加值为布尔值类型`YES`、键为`GADIsAdManagerApp `  的 键值对。
+```
+<key>GADIsAdManagerApp</key>
+<true/>
+```
+
+4. 在VXJSToNative.mm文件里 填写配置信息
 
    ![confog_msg](https://github.com/VideoX-RewardVideoAds/videoxdemo_iOS/blob/master/images/confog_msg.png)
 
